@@ -1,0 +1,43 @@
+name: analytics_a
+description: A new Flutter plugin project.
+version: 0.0.1
+homepage:
+publish_to: "none"
+
+environment:
+  sdk: ">=2.17.5 <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: 2.0.2
+  analytics:
+    path: ..
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 2.0.0
+
+flutter:
+  # This section identifies this Flutter project as a plugin project.
+  # The 'pluginClass' specifies the class (in Java, Kotlin, Swift, Objective-C, etc.)
+  # which should be registered in the plugin registry. This is required for
+  # using method channels.
+  # The Android 'package' specifies package in which the registered class is.
+  # This is required for using method channels on Android.
+  # The 'ffiPlugin' specifies that native code should be built and bundled.
+  # This is required for using `dart:ffi`.
+  # All these are used by the tooling to maintain consistency when
+  # adding or updating assets for this project.
+  plugin:
+    implements: analytics
+    platforms:
+      android:
+        package: app.flavored_packages.analytics_a
+        pluginClass: Analytics_aPlugin
+        dartPluginClass: AnalyticsA
+      ios:
+        pluginClass: Analytics_aPlugin
+        dartPluginClass: AnalyticsA
